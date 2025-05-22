@@ -1,10 +1,10 @@
 #stage 1: build app
-FROM node:20 as build
+FROM node:20 as builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run builder
+RUN npm run build
 
 
 # stage 2 :serve the app with nginx
